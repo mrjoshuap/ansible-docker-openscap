@@ -1,0 +1,1468 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+		Color mapping
+		Result enumeration
+	Class       |t|f|u|e|na|ne|
+	compliance  |G|R|B|Y|- |- |
+	inventory   |-|-|B|Y|- |- |
+	misc        |-|-|B|Y|- |- |
+	patch       |R|G|B|Y|- |- |
+	vuln        |R|G|B|Y|- |- |
+
+	R = red
+	G = green
+	B = blue
+	Y = yellow
+	- = grey
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>OVAL Results</title>
+    <style type="text/css">
+            table { border: 1px solid #000000; width: 100%; border-spacing: 0px; margin: 2px 0px;}
+            .noborder {border: none;}
+            .nomargin {margin: 0px;}
+            td { padding: 0px 4px 1px 4px;}
+            .SmallLabel { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 9pt; font-weight: bold; white-space: nowrap;}
+            .SmallText { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 9pt;}
+            .Label { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 10pt; font-weight: bold; white-space: nowrap;}
+            .TitleLabel { font-family: Geneva, Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10pt; font-weight: bold; white-space: nowrap;}
+            .Text { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 10pt;}
+            .Title { color: #FFFFFF; background-color: #706c60; padding: 0px 4px 1px 4px; font-size: 10pt; border-bottom: 1px solid #000000;}
+            .Center { text-align: center;}
+
+            a { color:#676c63;}
+            a.Hover:hover { color:#7b0e0e; text-decoration:underline;}
+
+            .LightRow { background-color: #FFFFFF;}
+            .DarkRow { background-color: #DDDDD8;}
+
+            .resultbadA{background-color: #FFBC8F;}
+            .resultbadB{background-color: #FFE0CC;}
+            .resultgoodA{background-color: #ACD685;}
+            .resultgoodB{background-color: #CBE6B3;}
+            .unknownA{background-color: #AEC8E0;}
+            .unknownB{background-color: #DAE6F1;}
+            .errorA{background-color: #FFDD75;}
+            .errorB{background-color: #FFECB3;}
+            .otherA{background-color: #EEEEEE;}
+            .otherB{background-color: #FFFFFF;}
+
+            .Classcompliance{background-color: #93C572;}
+            .Classinventory{background-color: #AEC6CF;}
+            .Classmiscellaneous{background-color: #9966CC;}
+            .Classpatch{background-color: #FFDD75;}
+            .Classvulnerability{background-color: #FF9966;}
+            .ColorBox{width: 2px;}
+		</style>
+  </head>
+  <body>
+    <table class="noborder nomargin">
+      <tr>
+        <td width="50%">
+          <table border="1">
+            <tr class="Title">
+              <td class="TitleLabel" colspan="5">OVAL Results Generator Information</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel">Schema Version</td>
+              <td class="SmallLabel">Product Name</td>
+              <td class="SmallLabel">Product Version</td>
+              <td class="SmallLabel">Date</td>
+              <td class="SmallLabel">Time</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="SmallText">5.11</td>
+              <td class="SmallText">cpe:/a:open-scap:oscap</td>
+              <td class="SmallText">1.2.10</td>
+              <td class="SmallText">2016-10-07</td>
+              <td class="SmallText">15:31:07</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel" style="width: 20%;" title="Non-Compliant/Vulnerable/Unpatched">#✕</td>
+              <td class="SmallLabel" style="width: 20%;" title="Compliant/Non-Vulnerable/Patched">#✓</td>
+              <td class="SmallLabel" style="width: 20%;" title="Error">#Error</td>
+              <td class="SmallLabel" style="width: 20%;" title="Unknown">#Unknown</td>
+              <td class="SmallLabel" style="width: 20%;" title="Inventory/Miscellaneous class, or Not Applicable/Not Evaluated result">#Other</td>
+            </tr>
+            <tr class="LightRow Center" style="height:auto;">
+              <td class="SmallText resultbadB" title="Non-Compliant/Vulnerable/Unpatched" style="width:20%">87</td>
+              <td class="SmallText resultgoodB" title="Compliant/Non-Vulnerable/Patched" style="width:20%">63</td>
+              <td class="SmallText errorB" title="Error" style="width:20%">5</td>
+              <td class="SmallText unknownB" title="Unknown" style="width:20%">1</td>
+              <td class="SmallText otherB" title="Inventory/Miscellaneous class, or Not Applicable/Not Evaluated result" style="width:20%">18</td>
+            </tr>
+          </table>
+        </td>
+        <td width="50%">
+          <table border="1">
+            <tr class="Title">
+              <td class="TitleLabel" colspan="5">OVAL Definition Generator Information</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel">Schema Version</td>
+              <td class="SmallLabel">Product Name</td>
+              <td class="SmallLabel">Product Version</td>
+              <td class="SmallLabel">Date</td>
+              <td class="SmallLabel">Time</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="SmallText">5.11</td>
+              <td class="SmallText">python</td>
+              <td class="SmallText">2.7.11</td>
+              <td class="SmallText">2016-06-27</td>
+              <td class="SmallText">15:32:30</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel" style="width: 20%;">#Definitions</td>
+              <td class="SmallLabel" style="width: 20%;">#Tests</td>
+              <td class="SmallLabel" style="width: 20%;">#Objects</td>
+              <td class="SmallLabel" style="width: 20%;">#States</td>
+              <td class="SmallLabel" style="width: 20%;">#Variables</td>
+            </tr>
+            <tr class="LightRow Center">
+              <td class="SmallText Center">174 Total<br /><table class="noborder"><tr class="Center"><td class="SmallText Classcompliance" title="compliance" style="width:20%">167</td><td class="SmallText Classinventory" title="inventory" style="width:20%">7</td><td class="SmallText Classmiscellaneous" title="miscellaneous" style="width:20%">0</td><td class="SmallText Classpatch" title="patch" style="width:20%">0</td><td class="SmallText Classvulnerability" title="vulnerability" style="width:20%">0</td></tr></table></td>
+              <td class="SmallText Center">423</td>
+              <td class="SmallText Center">439</td>
+              <td class="SmallText Center">99</td>
+              <td class="SmallText Center">60</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <a class="Hover" name="a_1" id="a_1" style="text-decoration:none;"></a>
+    <table border="1">
+      <tr class="Title">
+        <td class="TitleLabel" colspan="2">System Information</td>
+      </tr>
+      <tr class="DarkRow">
+        <td class="Label" width="20%">Host Name</td>
+        <td class="Text" width="80%">foo-bar</td>
+      </tr>
+      <tr class="LightRow">
+        <td class="Label" width="20%">Operating System</td>
+        <td class="Text" width="80%">Linux</td>
+      </tr>
+      <tr class="DarkRow">
+        <td class="Label" width="20%">Operating System Version</td>
+        <td class="Text" width="80%">4.7.5-200.fc24.x86_64</td>
+      </tr>
+      <tr class="LightRow">
+        <td class="Label" width="20%">Architecture</td>
+        <td class="Text" width="80%">x86_64</td>
+      </tr>
+      <tr class="DarkRow">
+        <td class="Label" width="20%">Interfaces</td>
+        <td width="80%"></td>
+      </tr>
+    </table>
+    <table border="1">
+      <tr class="Title">
+        <td class="TitleLabel" colspan="5">OVAL System Characteristics Generator Information</td>
+      </tr>
+      <tr class="DarkRow Center">
+        <td class="SmallLabel">Schema Version</td>
+        <td class="SmallLabel">Product Name</td>
+        <td class="SmallLabel">Product Version</td>
+        <td class="SmallLabel">Date</td>
+        <td class="SmallLabel">Time</td>
+      </tr>
+      <tr class="LightRow">
+        <td class="SmallText">5.11</td>
+        <td class="SmallText">cpe:/a:open-scap:oscap</td>
+        <td class="SmallText">2.7.11</td>
+        <td class="SmallText">2016-10-07</td>
+        <td class="SmallText">15:31:07</td>
+      </tr>
+    </table>
+    <table border="1">
+      <tr class="Title">
+        <td class="TitleLabel" colspan="5">OVAL Definition Results</td>
+      </tr>
+      <tr class="DarkRow">
+        <td colspan="5">
+          <table class="noborder nomargin" style="width:auto;">
+            <tr>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="resultbadA ColorBox"></td>
+                    <td class="resultbadB ColorBox"></td>
+                    <td class="Text" title="Non-Compliant/Vulnerable/Unpatched">✕</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="resultgoodA ColorBox"></td>
+                    <td class="resultgoodB ColorBox"></td>
+                    <td class="Text" title="Compliant/Non-Vulnerable/Patched">✓</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="errorA ColorBox"></td>
+                    <td class="errorB ColorBox"></td>
+                    <td class="Text">Error</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="unknownA ColorBox"></td>
+                    <td class="unknownB ColorBox"></td>
+                    <td class="Text">Unknown</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="DarkRow ColorBox"></td>
+                    <td class="LightRow ColorBox"></td>
+                    <td class="Text" title="Inventory/Miscellaneous class, or Not Applicable/Not Evaluated result">Other</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="TitleLabel">
+        <td class="Title" align="center">ID</td>
+        <td class="Title" align="center">Result</td>
+        <td class="Title" align="center">Class</td>
+        <td class="Title" align="center">Reference ID</td>
+        <td class="Title" align="center">Title</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-sysctl_static_net_ipv6_conf_all_disable_ipv6:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140912</a>], [sysctl_static_net_ipv6_conf_all_disable_ipv6]</td>
+        <td class="Text">Kernel "net.ipv6.conf.all.disable_ipv6" Parameter Configuration Check</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-sysctl_kernel_ipv6_disable:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141015</a>], [sysctl_kernel_ipv6_disable]</td>
+        <td class="Text">Kernel Runtime Parameter IPv6 Check</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-set_firewalld_default_zone:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20150122</a>], [set_firewalld_default_zone]</td>
+        <td class="Text">Change the default firewalld zone to drop</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-service_firewalld_enabled:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150824</a>], [service_firewalld_enabled]</td>
+        <td class="Text">Service firewalld Enabled</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-service_crond_enabled:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20150923</a>], [service_crond_enabled]</td>
+        <td class="Text">Service crond Enabled</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-service_chronyd_enabled:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20140906</a>], [service_chronyd_enabled]</td>
+        <td class="Text">Service chronyd Enabled</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-service_auditd_enabled:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20140906</a>], [service_auditd_enabled]</td>
+        <td class="Text">Service auditd Enabled</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-rsyslog_files_permissions:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20160115</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150827</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150827</a>], [rsyslog_files_permissions]</td>
+        <td class="Text">Confirm Existence and Permissions of System Log Files</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-rsyslog_files_ownership:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20160115</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150827</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150827</a>], [rsyslog_files_ownership]</td>
+        <td class="Text">Confirm Existence and Permissions of System Log Files</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-rsyslog_files_groupownership:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20160115</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150827</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150827</a>], [rsyslog_files_groupownership]</td>
+        <td class="Text">Confirm Existence and Permissions of System Log Files</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-rpm_verify_permissions:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150817</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150817</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150817</a>], [rpm_verify_permissions]</td>
+        <td class="Text">Verify File Ownership And Permissions Using RPM</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-package_vsftpd_installed:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140522</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [package_vsftpd_installed]</td>
+        <td class="Text">Package vsftpd Installed</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-package_gdm_installed:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160413</a>], [package_gdm_installed]</td>
+        <td class="Text">Package gdm Installed</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-package_firewalld_installed:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20140921</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20160221</a>], [package_firewalld_installed]</td>
+        <td class="Text">Package firewalld Installed</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-package_dconf_installed:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140424</a>], [package_dconf_installed]</td>
+        <td class="Text">Package dconf Installed</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-package_cronie_installed:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150923</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150923</a>], [package_cronie_installed]</td>
+        <td class="Text">Package cronie Installed</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-package_chrony_installed:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20140921</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20160221</a>], [package_chrony_installed]</td>
+        <td class="Text">Package chrony Installed</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-package_audit_installed:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20140921</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20160221</a>], [package_audit_installed]</td>
+        <td class="Text">Package audit Installed</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-no_empty_passwords:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130918</a>], [no_empty_passwords]</td>
+        <td class="Text">No nullok Option in /etc/pam.d/system-auth</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-no_direct_root_logins:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20151030</a>], [no_direct_root_logins]</td>
+        <td class="Text">Direct root Logins Not Allowed</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-mount_option_var_tmp_bind:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130821</a>], [mount_option_var_tmp_bind]</td>
+        <td class="Text">Bind Mount /var/tmp To /tmp</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-kernel_module_usb-storage_disabled:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20150819</a>], [kernel_module_usb-storage_disabled]</td>
+        <td class="Text">Disable usb-storage Kernel Module</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-kernel_module_dccp_disabled:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20150819</a>], [kernel_module_dccp_disabled]</td>
+        <td class="Text">Disable dccp Kernel Module</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-install_mcafee_antivirus:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140813</a>], [install_mcafee_antivirus]</td>
+        <td class="Text">Package McAfeeVSEForLinux Installed</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-install_antivirus:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140813</a>], [install_antivirus]</td>
+        <td class="Text">Package Antivirus Installed</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-file_user_owner_grub2_cfg:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140909</a>], [file_user_owner_grub2_cfg]</td>
+        <td class="Text">File grub.cfg Owned By root User</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-file_permissions_grub2_cfg:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140909</a>], [file_permissions_grub2_cfg]</td>
+        <td class="Text">File grub.cfg Permissions</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-file_group_owner_grub2_cfg:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140909</a>], [file_group_owner_grub2_cfg]</td>
+        <td class="Text">File grub.cfg Owned By root Group </td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-enable_dconf_user_profile:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140824</a>], [enable_dconf_user_profile]</td>
+        <td class="Text">Implement Local DB for DConf User Profile</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-disable_users_coredumps:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130807</a>], [disable_users_coredumps]</td>
+        <td class="Text">Disable Core Dumps</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-disable_interactive_boot:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20160613</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA23_20160613</a>], [disable_interactive_boot]</td>
+        <td class="Text">Verify that Interactive Boot is Disabled</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-disable_ctrlaltdel_reboot:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160111</a>], [disable_ctrlaltdel_reboot]</td>
+        <td class="Text">Disable Ctrl-Alt-Del Reboot Activation</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-chronyd_specify_remote_server:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150824</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20160221</a>], [chronyd_specify_remote_server]</td>
+        <td class="Text">Specify a Remote NTP Server for Time Data</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-chronyd_specify_multiple_servers:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150824</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20160221</a>], [chronyd_specify_multiple_servers]</td>
+        <td class="Text">Specify Multiple Remote chronyd NTP Servers for Time Data</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-bootloader_nousb_argument:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20160209</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20160209</a>], [bootloader_nousb_argument]</td>
+        <td class="Text">Disable Kernel Support for USB via Bootloader Configuration</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-bootloader_audit_argument:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150817</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150817</a>], [bootloader_audit_argument]</td>
+        <td class="Text">Enable Auditing for Processes Which Start Prior to the Audit Daemon</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-banner_etc_issue:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130819</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [banner_etc_issue]</td>
+        <td class="Text">System Login Banner Compliance</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-auditd_data_retention_space_left_action:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150813</a>], [auditd_data_retention_space_left_action]</td>
+        <td class="Text">Auditd Action to Take When Disk Starting to Run Low on Space</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-auditd_data_retention_num_logs:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150812</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150812</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150812</a>], [auditd_data_retention_num_logs]</td>
+        <td class="Text">Auditd Maximum Number of Logs to Retain</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-auditd_data_retention_max_log_file_action:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150813</a>], [auditd_data_retention_max_log_file_action]</td>
+        <td class="Text">Auditd Action to Take When Maximum Log Size Reached</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-auditd_data_retention_max_log_file:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150813</a>], [auditd_data_retention_max_log_file]</td>
+        <td class="Text">Auditd Maximum Log File Size</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-auditd_data_retention_admin_space_left_action:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20140312</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150813</a>], [auditd_data_retention_admin_space_left_action]</td>
+        <td class="Text">Auditd Action to Take When Disk is Low on Space</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-auditd_data_retention_action_mail_acct:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150813</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150813</a>], [auditd_data_retention_action_mail_acct]</td>
+        <td class="Text">Auditd Email Account to Notify Upon Action</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-auditd_audispd_syslog_plugin_activated:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150817</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150817</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150817</a>], [auditd_audispd_syslog_plugin_activated]</td>
+        <td class="Text">The syslog Plugin Of the Audit Event Multiplexor (audispd) Is Activated</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_usergroup_modification:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150407</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150407</a>], [audit_rules_usergroup_modification]</td>
+        <td class="Text">Audit User/Group Modification</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_unsuccessful_file_modification:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150402</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150402</a>], [audit_rules_unsuccessful_file_modification]</td>
+        <td class="Text">Ensure auditd Collects Unauthorized Access Attempts to Files (unsuccessful)</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_time_watch_localtime:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150427</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150427</a>], [audit_rules_time_watch_localtime]</td>
+        <td class="Text">Record Attempts to Alter Time Through the Localtime File</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_time_stime:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150428</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150428</a>], [audit_rules_time_stime]</td>
+        <td class="Text">Record Attempts to Alter Time Through Stime</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_time_settimeofday:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150429</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150429</a>], [audit_rules_time_settimeofday]</td>
+        <td class="Text">Record Attempts to Alter Time Through Settimeofday</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_time_clock_settime:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150427</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150427</a>], [audit_rules_time_clock_settime]</td>
+        <td class="Text">Record Attempts to Alter Time Through Clock_settime</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_time_adjtimex:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150429</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150429</a>], [audit_rules_time_adjtimex]</td>
+        <td class="Text">Record Attempts to Alter Time Through Adjtimex</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_sysadmin_actions:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150326</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150326</a>], [audit_rules_sysadmin_actions]</td>
+        <td class="Text">Audit System Administrator Actions</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_session_events:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150520</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150520</a>], [audit_rules_session_events]</td>
+        <td class="Text">Record Attempts to Alter Process and Session Initiation Information</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_privileged_commands:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150420</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150420</a>], [audit_rules_privileged_commands]</td>
+        <td class="Text">Ensure auditd Collects Information on the Use of Privileged Commands</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_networkconfig_modification:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150424</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150424</a>], [audit_rules_networkconfig_modification]</td>
+        <td class="Text">Record Events that Modify the System's Network Environment</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_media_export:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150327</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150327</a>], [audit_rules_media_export]</td>
+        <td class="Text">Audit Information Export To Media</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_mac_modification:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150424</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150424</a>], [audit_rules_mac_modification]</td>
+        <td class="Text">Record Events that Modify the System's Mandatory Access Controls</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_login_events:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150926</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150926</a>], [audit_rules_login_events]</td>
+        <td class="Text">Record Attempts to Alter Login and Logout Events</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_kernel_module_loading:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150325</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150325</a>], [audit_rules_kernel_module_loading]</td>
+        <td class="Text">Audit Kernel Module Loading and Unloading</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_immutable:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150518</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150518</a>], [audit_rules_immutable]</td>
+        <td class="Text">Make Audit Configuration Immutable</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_file_deletion_events:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150326</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150326</a>], [audit_rules_file_deletion_events]</td>
+        <td class="Text">Audit File Deletion Events</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_setxattr:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150403</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150403</a>], [audit_rules_dac_modification_setxattr]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - setxattr</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_removexattr:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150403</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150403</a>], [audit_rules_dac_modification_removexattr]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - removexattr</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_lsetxattr:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150403</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150403</a>], [audit_rules_dac_modification_lsetxattr]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - lsetxattr</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_lremovexattr:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150408</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150408</a>], [audit_rules_dac_modification_lremovexattr]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - lremovexattr</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_lchown:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150408</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150408</a>], [audit_rules_dac_modification_lchown]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - lchown</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_fsetxattr:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150410</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150410</a>], [audit_rules_dac_modification_fsetxattr]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - fsetxattr</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_fremovexattr:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150410</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150410</a>], [audit_rules_dac_modification_fremovexattr]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - fremovexattr</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_fchownat:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150410</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150410</a>], [audit_rules_dac_modification_fchownat]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - fchownat</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_fchown:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150410</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150410</a>], [audit_rules_dac_modification_fchown]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - fchown</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_fchmodat:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150420</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150420</a>], [audit_rules_dac_modification_fchmodat]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - fchmodat</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_fchmod:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150421</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150421</a>], [audit_rules_dac_modification_fchmod]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - fchmod</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_chown:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150421</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150421</a>], [audit_rules_dac_modification_chown]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - chown</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-audit_rules_dac_modification_chmod:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150421</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150421</a>], [audit_rules_dac_modification_chmod]</td>
+        <td class="Text">Audit Discretionary Access Control Modification Events - chmod</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-aide_build_database:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150924</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150924</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150924</a>], [aide_build_database]</td>
+        <td class="Text">Aide Database Must Exist</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-accounts_passwords_pam_faillock_unlock_time:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150515</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150515</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150515</a>], [accounts_passwords_pam_faillock_unlock_time]</td>
+        <td class="Text">Lock out account after failed login attempts</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-accounts_passwords_pam_faillock_deny:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150122</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150122</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150122</a>], [accounts_passwords_pam_faillock_deny]</td>
+        <td class="Text">Lock out account after failed login attempts</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_unix_remember:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20131025</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150929</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150929</a>], [accounts_password_pam_unix_remember]</td>
+        <td class="Text">Limit Password Reuse</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_ucredit:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141010</a>], [accounts_password_pam_ucredit]</td>
+        <td class="Text">Set Password ucredit Requirements</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_ocredit:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141010</a>], [accounts_password_pam_ocredit]</td>
+        <td class="Text">Set Password ocredit Requirements</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_minlen:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141010</a>], [accounts_password_pam_minlen]</td>
+        <td class="Text">Set Password minlen Requirements</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_minclass:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141010</a>], [accounts_password_pam_minclass]</td>
+        <td class="Text">Set Password minclass Requirements</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_maxrepeat:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141006</a>], [accounts_password_pam_maxrepeat]</td>
+        <td class="Text">Set Password maxrepeat Requirements</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_maxclassrepeat:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160227</a>], [accounts_password_pam_maxclassrepeat]</td>
+        <td class="Text">Set Password maxclassrepeat Requirements</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_lcredit:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140926</a>], [accounts_password_pam_lcredit]</td>
+        <td class="Text">Set Password lcredit Requirements</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_difok:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141010</a>], [accounts_password_pam_difok]</td>
+        <td class="Text">Set Password difok Requirements</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_dcredit:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141010</a>], [accounts_password_pam_dcredit]</td>
+        <td class="Text">Set Password dcredit Requirements</td>
+      </tr>
+      <tr class="unknownA">
+        <td class="Text" align="center">oval:ssg-no_shelllogin_for_systemaccounts:def:1</td>
+        <td class="Text" align="center">unknown</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20160621</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20160621</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA23_20160621</a>], [no_shelllogin_for_systemaccounts]</td>
+        <td class="Text">System Accounts Do Not Run a Shell</td>
+      </tr>
+      <tr class="errorA">
+        <td class="Text" align="center">oval:ssg-accounts_password_warn_age_login_defs:def:1</td>
+        <td class="Text" align="center">error</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150201</a>], [accounts_password_warn_age_login_defs]</td>
+        <td class="Text">Set Password Expiration Parameters</td>
+      </tr>
+      <tr class="errorB">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_retry:def:1</td>
+        <td class="Text" align="center">error</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140925</a>], [accounts_password_pam_retry]</td>
+        <td class="Text">Set Password retry Requirements</td>
+      </tr>
+      <tr class="errorA">
+        <td class="Text" align="center">oval:ssg-accounts_password_minlen_login_defs:def:1</td>
+        <td class="Text" align="center">error</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150201</a>], [accounts_password_minlen_login_defs]</td>
+        <td class="Text">Set Password Expiration Parameters</td>
+      </tr>
+      <tr class="errorB">
+        <td class="Text" align="center">oval:ssg-accounts_minimum_age_login_defs:def:1</td>
+        <td class="Text" align="center">error</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150201</a>], [accounts_minimum_age_login_defs]</td>
+        <td class="Text">Set Password Expiration Parameters</td>
+      </tr>
+      <tr class="errorA">
+        <td class="Text" align="center">oval:ssg-accounts_maximum_age_login_defs:def:1</td>
+        <td class="Text" align="center">error</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150130</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150130</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150130</a>], [accounts_maximum_age_login_defs]</td>
+        <td class="Text">Set Password Expiration Parameters</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-system_info_architecture_x86_64:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130819</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [system_info_architecture_x86_64]</td>
+        <td class="Text">Test for x86_64 Architecture</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-system_info_architecture_x86:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130819</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [system_info_architecture_x86]</td>
+        <td class="Text">Test for x86 Architecture</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-system_info_architecture_ppc_64:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160527</a>], [system_info_architecture_ppc_64]</td>
+        <td class="Text">Test for PPC and PPCLE Architecture</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-system_info_architecture_64bit:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160527</a>], [system_info_architecture_64bit]</td>
+        <td class="Text">Test for 64-bit Architecture</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-sysctl_runtime_net_ipv6_conf_all_disable_ipv6:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140912</a>], [sysctl_runtime_net_ipv6_conf_all_disable_ipv6]</td>
+        <td class="Text">Kernel "net.ipv6.conf.all.disable_ipv6" Parameter Runtime Check</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-mount_option_tmp_nosuid:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130821</a>], [mount_option_tmp_nosuid]</td>
+        <td class="Text">Add nosuid Option to /tmp</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-mount_option_tmp_nodev:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130821</a>], [mount_option_tmp_nodev]</td>
+        <td class="Text">Add nodev Option to /tmp</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-mount_option_dev_shm_nosuid:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130821</a>], [mount_option_dev_shm_nosuid]</td>
+        <td class="Text">Add nosuid Option to /dev/shm</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-mount_option_dev_shm_noexec:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130821</a>], [mount_option_dev_shm_noexec]</td>
+        <td class="Text">Add noexec Option to /dev/shm</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-mount_option_dev_shm_nodev:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130820</a>], [mount_option_dev_shm_nodev]</td>
+        <td class="Text">Add nodev Option to /dev/shm</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-installed_OS_is_sl7:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center">[cpe:/o:scientificlinux:scientificlinux:6], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">SL7_20150707</a>], [installed_OS_is_sl7]</td>
+        <td class="Text">Scientific Linux 7</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-installed_OS_is_sl6:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center">[cpe:/o:scientificlinux:scientificlinux:6], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">SL6_20150707</a>], [installed_OS_is_sl6]</td>
+        <td class="Text">Scientific Linux 6</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-installed_OS_is_rhel7:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center">[cpe:/o:redhat:enterprise_linux:7], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [installed_OS_is_rhel7]</td>
+        <td class="Text">Red Hat Enterprise Linux 7</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-installed_OS_is_rhel6:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center">[cpe:/o:redhat:enterprise_linux:6], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150522</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [installed_OS_is_rhel6]</td>
+        <td class="Text">Red Hat Enterprise Linux 6</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-installed_OS_is_fedora:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center">[cpe:/o:fedoraproject:fedora:22], [cpe:/o:fedoraproject:fedora:23], [cpe:/o:fedoraproject:fedora:24], [cpe:/o:fedoraproject:fedora:25], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150624</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150522</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA21_20150624</a>], [installed_OS_is_fedora]</td>
+        <td class="Text">Installed operating system is Fedora</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-installed_OS_is_centos7:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center">[cpe:/o:centos:centos:7], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">CENTOS7_20150707</a>], [installed_OS_is_centos7]</td>
+        <td class="Text">CentOS 7</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:ssg-installed_OS_is_centos6:def:1</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center">[cpe:/o:centos:centos:6], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">CENTOS6_20150707</a>], [installed_OS_is_centos6]</td>
+        <td class="Text">CentOS 6</td>
+      </tr>
+      <tr class="otherB">
+        <td class="Text" align="center">oval:ssg-accounts_password_all_shadowed:def:1</td>
+        <td class="Text" align="center">not applicable</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130918</a>], [accounts_password_all_shadowed]</td>
+        <td class="Text">All Password Hashes Shadowed</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-xwindows_runlevel_setting:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160111</a>], [xwindows_runlevel_setting]</td>
+        <td class="Text">Disable X Windows Startup By Setting Default SystemD Target</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-sysctl_kernel_exec_shield:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">201410</a>], [sysctl_kernel_exec_shield]</td>
+        <td class="Text">Kernel Runtime Parameter "kernel.exec-shield" Check</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-sshd_set_keepalive:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140414</a>], [sshd_set_keepalive]</td>
+        <td class="Text">Set ClientAliveCountMax for User Logins</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-sshd_set_idle_timeout:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140414</a>], [sshd_set_idle_timeout]</td>
+        <td class="Text">Set OpenSSH Idle Timeout Interval</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-sshd_disable_root_login:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140414</a>], [sshd_disable_root_login]</td>
+        <td class="Text">Disable root Login via SSH</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-sshd_disable_empty_passwords:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140414</a>], [sshd_disable_empty_passwords]</td>
+        <td class="Text">Disable Empty Passwords</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-snmpd_use_newer_protocol:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140813</a>], [snmpd_use_newer_protocol]</td>
+        <td class="Text">SNMP use newer protocols</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-snmpd_not_default_password:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140813</a>], [snmpd_not_default_password]</td>
+        <td class="Text">SNMP default communities disabled</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-set_password_hashing_algorithm_logindefs:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150201</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150201</a>], [set_password_hashing_algorithm_logindefs]</td>
+        <td class="Text">Set SHA512 Password Hashing Algorithm in /etc/login.defs</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-service_sshd_disabled:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[service_sshd_disabled]</td>
+        <td class="Text">Service sshd Disabled</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-securetty_root_login_console_only:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141114</a>], [securetty_root_login_console_only]</td>
+        <td class="Text">Restrict Virtual Console Root Logins</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-rpm_verify_hashes:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150818</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150818</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150818</a>], [rpm_verify_hashes]</td>
+        <td class="Text">Verify File Hashes with RPM</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-restrict_serial_port_logins:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141114</a>], [restrict_serial_port_logins]</td>
+        <td class="Text">Restrict Serial Port Root Logins</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-require_singleuser_auth:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140926</a>], [require_singleuser_auth]</td>
+        <td class="Text">Require Authentication for Single-User Mode</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-package_xorg-x11-server-common_removed:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20151202</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20151202</a>], [package_xorg-x11-server-common_removed]</td>
+        <td class="Text">Package xorg-x11-server-common Removed</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-package_prelink_removed:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150624</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150624</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA21_20150624</a>], [package_prelink_removed]</td>
+        <td class="Text">Package prelink Removed</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-package_openssh-server_removed:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130829</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [package_openssh-server_removed]</td>
+        <td class="Text">Package openssh-server Removed</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-package_net-snmp_removed:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130829</a>], [package_net-snmp_removed]</td>
+        <td class="Text">Package net-snmp Removed</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-no_netrc_files:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20141114</a>], [no_netrc_files]</td>
+        <td class="Text">Verify No netrc Files Exist</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-no_insecure_locks_exports:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140813</a>], [no_insecure_locks_exports]</td>
+        <td class="Text">Ensure insecure_locks is disabled</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-gnome_gdm_disable_guest_login:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160413</a>], [gnome_gdm_disable_guest_login]</td>
+        <td class="Text">Disable GDM Guest Login</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-gnome_gdm_disable_automatic_login:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160413</a>], [gnome_gdm_disable_automatic_login]</td>
+        <td class="Text">Disable GDM Automatic Login</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-gid_passwd_group_same:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150911</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150911</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150911</a>], [gid_passwd_group_same]</td>
+        <td class="Text">All GIDs Are Present In /etc/group</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-ftp_present_banner:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140812</a>], [ftp_present_banner]</td>
+        <td class="Text">Banner for FTP Users</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-ftp_log_transactions:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140812</a>], [ftp_log_transactions]</td>
+        <td class="Text">Banner for FTP Users</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-file_permissions_ungroupowned:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[file_permissions_ungroupowned]</td>
+        <td class="Text">Find files unowned by a group</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-file_permissions_library_dirs:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [file_permissions_library_dirs]</td>
+        <td class="Text">Verify that Shared Library Files Have Restrictive Permissions</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-file_permissions_home_dirs:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20141106</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20141106</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">Fedora20_20141106</a>], [file_permissions_home_dirs]</td>
+        <td class="Text">Proper Permissions User Home Directories</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-file_permissions_binary_dirs:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [file_permissions_binary_dirs]</td>
+        <td class="Text">Verify that System Executables Have Restrictive Permissions</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-file_ownership_var_log_audit:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150814</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150814</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150814</a>], [file_ownership_var_log_audit]</td>
+        <td class="Text">Verify /var/log/audit Ownership</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-file_ownership_library_dirs:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [file_ownership_library_dirs]</td>
+        <td class="Text">Verify that Shared Library Files Have Root Ownership</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-file_ownership_binary_dirs:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [file_ownership_binary_dirs]</td>
+        <td class="Text">Verify that System Executables Have Root Ownership</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-ensure_gpgcheck_never_disabled:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130807</a>], [ensure_gpgcheck_never_disabled]</td>
+        <td class="Text">Ensure gpgcheck Enabled For All Yum or Dnf Package Repositories</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-ensure_gpgcheck_globally_activated:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130807</a>], [ensure_gpgcheck_globally_activated]</td>
+        <td class="Text">Ensure Yum gpgcheck Globally Activated</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-display_login_attempts:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150611</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150611</a>], [display_login_attempts]</td>
+        <td class="Text">Set Last Login/Access Notification</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-disable_prelink:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150624</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150624</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA21_20150624</a>], [disable_prelink]</td>
+        <td class="Text">Disable Prelinking</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_screensaver_user_info:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140415</a>], [dconf_gnome_screensaver_user_info]</td>
+        <td class="Text">Disable Full User Name on Splash Shield</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_screensaver_mode_blank:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140824</a>], [dconf_gnome_screensaver_mode_blank]</td>
+        <td class="Text">Implement Blank Screensaver</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_screensaver_lock_enabled:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140824</a>], [dconf_gnome_screensaver_lock_enabled]</td>
+        <td class="Text">Enable GNOME3 Screensaver Lock After Idle Period</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_screensaver_idle_delay:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140824</a>], [dconf_gnome_screensaver_idle_delay]</td>
+        <td class="Text">Configure the GNOME3 GUI Screen locking</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_screensaver_idle_activation_enabled:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140824</a>], [dconf_gnome_screensaver_idle_activation_enabled]</td>
+        <td class="Text">Enable GNOME3 Screensaver Idle Activation</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_remote_access_encryption:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_remote_access_encryption]</td>
+        <td class="Text">Require Encryption for Remote Access in GNOME3</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_remote_access_credential_prompt:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_remote_access_credential_prompt]</td>
+        <td class="Text">Require Credential Prompting for Remote Access in GNOME3</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_login_retries:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_login_retries]</td>
+        <td class="Text">Set the GNOME3 Login Number of Failures</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_login_banner_text:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140902</a>], [dconf_gnome_login_banner_text]</td>
+        <td class="Text">Enable GUI Warning Banner</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_enable_smartcard_auth:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_enable_smartcard_auth]</td>
+        <td class="Text">Enable the GNOME3 Login Smartcard Authentication</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_wifi_notification:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_disable_wifi_notification]</td>
+        <td class="Text">Disable WIFI Network Notification in GNOME3</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_wifi_create:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_disable_wifi_create]</td>
+        <td class="Text">Disable WIFI Network Connection Creation in GNOME3</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_user_list:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140823</a>], [dconf_gnome_disable_user_list]</td>
+        <td class="Text">Disable the GNOME3 Login User List</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_user_admin:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_disable_user_admin]</td>
+        <td class="Text">Disable User Administration in GNOME3</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_thumbnailers:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140824</a>], [dconf_gnome_disable_thumbnailers]</td>
+        <td class="Text">Disable All GNOME3 Thumbnailers</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_restart_shutdown:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_disable_restart_shutdown]</td>
+        <td class="Text">Disable the GNOME3 Login Restart and Shutdown Buttons</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_power_settings:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_disable_power_settings]</td>
+        <td class="Text">Disable Power Settings in GNOME3</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_geolocation:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_disable_geolocation]</td>
+        <td class="Text">Disable Geolocation in GNOME3</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_ctrlaltdel_reboot:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160415</a>], [dconf_gnome_disable_ctrlaltdel_reboot]</td>
+        <td class="Text">Disable Ctrl-Alt-Del Reboot Key Sequence in GNOME3</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_disable_automount:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140824</a>], [dconf_gnome_disable_automount]</td>
+        <td class="Text">Disable GNOME3 Automounting</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-dconf_gnome_banner_enabled:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140823</a>], [dconf_gnome_banner_enabled]</td>
+        <td class="Text">Enable GNOME3 Login Warning Banner</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-bootloader_uefi_password:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20160609</a>], [bootloader_uefi_password]</td>
+        <td class="Text">Set the UEFI Boot Loader Password</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-bootloader_password:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20140909</a>], [bootloader_password]</td>
+        <td class="Text">Set Boot Loader Password</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-accounts_root_path_dirs_no_write:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20141119</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20141119</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20141119</a>], [accounts_root_path_dirs_no_write]</td>
+        <td class="Text">Write permissions are disabled for group and other in all
+      directories in Root's Path</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-accounts_password_pam_pwquality:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150522</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA20_20150522</a>], [accounts_password_pam_pwquality]</td>
+        <td class="Text">Check pam_pwquality Existence in system-auth</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:ssg-accounts_no_uid_except_zero:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">20130807</a>], [accounts_no_uid_except_zero]</td>
+        <td class="Text">UID 0 Belongs Only To Root</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:ssg-account_unique_name:def:1</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">compliance</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL6_20150911</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">RHEL7_20150911</a>], [<a class="Hover" target="_blank" href="https://github.com/OpenSCAP/scap-security-guide/wiki/Contributors">FEDORA22_20150911</a>], [account_unique_name]</td>
+        <td class="Text">Set All Accounts To Have Unique Names</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+---
+- name: upgrade java
+  hosts: all
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+    - name: get java version
+      shell: java -version 2>&1 | grep version | awk '{print $3}' | sed -e 's/\"//g'
+      register: java_version
+
+    - name: upgrade java to latest
+      package: name=java state=latest
+      when: java_version.stdout != "1.8.0_102"

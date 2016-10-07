@@ -1,0 +1,17 @@
+---
+- name: install openscap
+  hosts: all
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+    - name: install the openscap container scanner and dependencies
+      package: name={{ item }} state=installed
+      with_items:
+        - atomic
+        - openscap
+        - openscap-containers
+        - openscap-scanner
+        - scap-security-guide
+      tags: install-openscap

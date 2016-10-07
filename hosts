@@ -1,0 +1,3 @@
+[servers]
+#fedora-server.joshuas-macbook-pro.local ansible_host=192.168.83.252
+localhost ansible_connection=local
