@@ -12,6 +12,9 @@
         - atomic
         - openscap
         - openscap-containers
+        - openscap-content
+        - openscap-extra-probes
         - openscap-scanner
+        - openscap-utils
         - scap-security-guide
       tags: install-openscap

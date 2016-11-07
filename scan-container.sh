@@ -14,7 +14,7 @@ fi
 pushd $(dirname ${0})
 
 if [ -z "${PROFILE}" ]; then
-    PROFILE_CMD="--profile=${PROFILE}"
+    PROFILE_CMD="--profile ${PROFILE}"
 else
     PROFILE_CMD=""
 fi
@@ -32,7 +32,9 @@ oscap-docker image "${DOCKER_IMAGE}" \
     xccdf eval \
     --results "reports/results-${DOCKER_IMAGE_CLEANED}-xccdf.xml" \
     --report "reports/report-${DOCKER_IMAGE_CLEANED}-xccdf.html" \
-    --fetch-remote-resources ${PROFILE_CMD} \
-    /usr/share/xml/scap/ssg/content/ssg-${SCAP_PROFILE}-xccdf.xml
+    --cpe /usr/share/xml/scap/ssg/content/ssg-${SCAP_PROFILE}-cpe-dictionary.xml
+    --fetch-remote-resources \
+    ${PROFILE_CMD} \
+    /usr/share/xml/scap/ssg/content/ssg-${SCAP_PROFILE}-ds.xml
 
 popd

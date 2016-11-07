@@ -35,6 +35,6 @@
       synchronize: mode=pull dest=. src="{{ openscap_temp_path.stdout }}/reports" recursive=yes
       tags: run-openscap-scans
 
-    # - name: remove openscap temp directory
-    #   file: path="{{ openscap_temp_path.stdout }}" state=absent
-    #   tags: run-openscap-scans
+    - name: remove openscap temp directory
+      file: path="{{ openscap_temp_path.stdout }}" state=absent
+      tags: run-openscap-scans
